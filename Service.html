@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | BrandNorth - Professional Branding Solutions</title>
+    <meta name="description" content="Explore BrandNorth's comprehensive branding services including apparel, drinkware, writing instruments, tech accessories, bags, and office items.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables - Consistent with main site */
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #e63946;
+            --accent: #f4a261;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26, 58, 95, 0.8), rgba(26, 58, 95, 0.9)), url('./hy\ \(2\).jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Service Detail Section */
+        .service-detail {
+            background-color: white;
+        }
+
+        .service-hero {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 50px;
+        }
+
+        .service-hero.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-hero-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .service-hero-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-hero-content {
+            flex: 1;
+        }
+
+        .service-hero-content h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            margin: 30px 0;
+        }
+
+        .service-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .service-features i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        /* Service Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -10%;
+            width: 20%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(26, 58, 95, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            transition: var(--transition);
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.9)), url('./hy\ \(2\).jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .service-hero {
+                flex-direction: column;
+            }
+            
+            .service-hero.reverse {
+                flex-direction: column;
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .process-step {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 150px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Brand<span>North</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Service.html" class="active">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="Quote.html" class="btn">Get Quote</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive branding solutions to make your products unforgettable</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="Service.html">Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Detail Section -->
+    <section id="services" class="service-detail">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Branding Solutions</h2>
+                <p>We specialize in transforming everyday items into powerful brand ambassadors</p>
+            </div>
+
+            <!-- Apparel Branding -->
+            <div class="service-hero">
+                <div class="service-hero-img">
+                    <img src="cf.webp" alt="Apparel Branding">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Apparel Branding</h2>
+                    <p>Make your team look professional and unified with custom branded apparel. From corporate events to trade shows, our high-quality branded clothing ensures your team stands out while representing your brand consistently.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom t-shirts, polo shirts, and hoodies</li>
+                        <li><i class="fas fa-check"></i> Professional uniforms and workwear</li>
+                        <li><i class="fas fa-check"></i> Custom caps and headwear</li>
+                        <li><i class="fas fa-check"></i> High-quality embroidery and printing</li>
+                        <li><i class="fas fa-check"></i> Sustainable and organic fabric options</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Apparel Quote</a>
+                </div>
+            </div>
+
+            <!-- Drinkware Branding -->
+            <div class="service-hero reverse">
+                <div class="service-hero-img">
+                    <img src="https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBib3R0bGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" alt="Drinkware Branding">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Drinkware Branding</h2>
+                    <p>Keep your brand top-of-mind with custom drinkware that people use daily. Our branded mugs, tumblers, and water bottles combine functionality with powerful branding to create lasting impressions.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom mugs and travel tumblers</li>
+                        <li><i class="fas fa-check"></i> Branded water bottles and sports bottles</li>
+                        <li><i class="fas fa-check"></i> Wine glasses and barware</li>
+                        <li><i class="fas fa-check"></i> High-quality printing and engraving</li>
+                        <li><i class="fas fa-check"></i> Eco-friendly and reusable options</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Drinkware Quote</a>
+                </div>
+            </div>
+
+            <!-- Writing Instruments -->
+            <div class="service-hero">
+                <div class="service-hero-img">
+                    <img src="vy.avif" alt="Writing Instruments">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Writing Instruments</h2>
+                    <p>Create lasting impressions with custom pens and markers that make a statement every time they're used. Our writing instruments combine elegant design with your brand identity for maximum impact.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom ballpoint and rollerball pens</li>
+                        <li><i class="fas fa-check"></i> High-end fountain pens</li>
+                        <li><i class="fas fa-check"></i> Branded markers and highlighters</li>
+                        <li><i class="fas fa-check"></i> Precision engraving and printing</li>
+                        <li><i class="fas fa-check"></i> Luxury and eco-friendly materials</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Writing Instruments Quote</a>
+                </div>
+            </div>
+
+            <!-- Tech Accessories -->
+            <div class="service-hero reverse">
+                <div class="service-hero-img">
+                    <img src="vh.avif" alt="Tech Accessories Branding">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Tech Accessories</h2>
+                    <p>Connect with modern audiences through branded tech accessories that combine utility with style. From power banks to wireless chargers, our tech accessories keep your brand relevant in today's digital world.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom power banks and chargers</li>
+                        <li><i class="fas fa-check"></i> Branded USB drives and cables</li>
+                        <li><i class="fas fa-check"></i> Wireless charging pads and stands</li>
+                        <li><i class="fas fa-check"></i> Phone cases and laptop sleeves</li>
+                        <li><i class="fas fa-check"></i> Bluetooth speakers and earbuds</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Tech Accessories Quote</a>
+                </div>
+            </div>
+
+            <!-- Bags & Totes -->
+            <div class="service-hero">
+                <div class="service-hero-img">
+                    <img src="vp.avif" alt="Bags and Totes Branding">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Bags & Totes</h2>
+                    <p>Put your brand on the move with custom bags and totes that combine style, functionality, and powerful branding. From corporate events to everyday use, our bags ensure your brand gets noticed wherever it goes.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom backpacks and messenger bags</li>
+                        <li><i class="fas fa-check"></i> Branded tote bags and shopping bags</li>
+                        <li><i class="fas fa-check"></i> Duffle bags and travel accessories</li>
+                        <li><i class="fas fa-check"></i> High-quality printing and embroidery</li>
+                        <li><i class="fas fa-check"></i> Sustainable and recycled materials</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Bags & Totes Quote</a>
+                </div>
+            </div>
+
+            <!-- Office & Desk Items -->
+            <div class="service-hero reverse">
+                <div class="service-hero-img">
+                    <img src="vx.avif" alt="Office and Desk Items Branding">
+                </div>
+                <div class="service-hero-content">
+                    <h2>Office & Desk Items</h2>
+                    <p>Keep your brand visible in the workplace with custom office and desk accessories. From notebooks to desk organizers, our products ensure your brand remains top-of-mind throughout the workday.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom notebooks and journals</li>
+                        <li><i class="fas fa-check"></i> Branded sticky notes and notepads</li>
+                        <li><i class="fas fa-check"></i> Desk organizers and pen holders</li>
+                        <li><i class="fas fa-check"></i> Mouse pads and desk mats</li>
+                        <li><i class="fas fa-check"></i> Calendars and planners</li>
+                    </ul>
+                    <a href="Quote.html" class="btn">Get Office Items Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Additional Services</h2>
+                <p>Beyond product branding, we offer comprehensive solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1732532973406-0a82b447739c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fENvcnBvcmF0ZSUyMEdpZnRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" alt="Corporate Gifts">
+                    </div>
+                    <div class="service-content">
+                        <h3>Corporate Gifting</h3>
+                        <p>Thoughtfully curated branded gift sets for clients, employees, and partners that strengthen relationships and reinforce your brand.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1758706926966-71689a9e7d99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fEV2ZW50JTIwQnJhbmRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600 " alt="Event Branding">
+                    </div>
+                    <div class="service-content">
+                        <h3>Event Branding</h3>
+                        <p>Complete event branding solutions including banners, signage, and promotional materials that create memorable experiences.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Packaging Solutions">
+                    </div>
+                    <div class="service-content">
+                        <h3>Packaging Solutions</h3>
+                        <p>Custom packaging that enhances unboxing experiences and extends your brand identity to product presentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Service Process</h2>
+                <p>How we bring your branded products to life</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your brand, goals, target audience, and vision for the promotional products.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Concept</h3>
+                    <p>Our creative team develops concepts and designs that align with your brand identity.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Material Selection</h3>
+                    <p>We help you choose the right materials and products that match your brand values and budget.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Production</h3>
+                    <p>We use high-quality materials and advanced techniques to bring your designs to life.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Quality Check</h3>
+                    <p>Every product undergoes rigorous quality control to ensure it meets our high standards.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Delivery</h3>
+                    <p>Your custom branded products are delivered on time and ready to make an impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the minimum order quantity for custom branded products?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our minimum order quantity varies depending on the product type and customization method. For most items, we can accommodate orders as small as 25-50 units, while some specialized products may have higher minimums. Contact us with your specific needs, and we'll provide options that work for your budget and requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the branding process typically take?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The timeline depends on the complexity of your order and the products selected. Standard orders typically take 2-4 weeks from design approval to delivery. Rush services are available for an additional fee, which can reduce production time to 7-10 days for many products.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What file formats do you require for branding artwork?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We prefer vector files (AI, EPS, PDF) for the cleanest results, but we can work with high-resolution raster files (PNG, JPG, PSD) at 300 DPI or higher. If you don't have suitable artwork, our design team can create custom designs based on your brand guidelines for an additional fee.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer sustainable or eco-friendly product options?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We're committed to sustainability and offer a wide range of eco-friendly options including organic cotton apparel, recycled materials, biodegradable products, and items from certified sustainable sources. Let us know your sustainability priorities, and we'll recommend appropriate products.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help with product selection if I'm unsure what would work best?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our branding consultants are experts at matching products to your specific goals, audience, and budget. We'll ask about your objectives, target demographic, and brand values to recommend the most effective products for your campaign.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Brand?</h2>
+            <p>Contact us today for a free consultation and quote on your custom branded products.</p>
+            <a href="Quote.html" class="btn">Get Your Custom Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BrandNorth</h3>
+                    <p>We specialize in transforming promotional products into powerful brand statements that get noticed and remembered.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="Service.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="Service.html">Apparel Branding</a></li>
+                        <li><a href="Service.html">Drinkware Branding</a></li>
+                        <li><a href="Service.html">Writing Instruments</a></li>
+                        <li><a href="Service.html">Tech Accessories</a></li>
+                        <li><a href="Service.html">Corporate Gifts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> I will write address here</li>
+                        <li><i class="fas fa-phone"></i> (403)- 389-6114</li>
+                        <li><i class="fas fa-envelope"></i> info@brandnorth.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BrandNorth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+                
+                answer.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
